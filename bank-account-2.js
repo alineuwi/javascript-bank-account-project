@@ -3,7 +3,10 @@ var accounts = [];
 // Account Object
 // amount
 // username
-
+var Account = function Account(username, amount){
+    this.amount = amount,
+    this,username = username
+};
 // createAccount(account)
 // push onto accounts array
 // return account
