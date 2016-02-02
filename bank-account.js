@@ -3,23 +3,22 @@ var account = {
     balance: 0
 };
 
-// deposit
+// Deposits amount to account
 function deposit(accountName, amount) {
     return accountName.balance += amount;
 }
 
-// withdraw
-function deposit(accountName, amount) {
-    if (amount < accountName.balance){
+// Withdraws amount from account
+function withdraw(accountName, amount) {
+    if (amount > accountName.balance){
         console.log("I am sorry, you do not have enough funds");
     } else {
-        return accountName.balance += amount;
+        return accountName.balance -= amount;
     }
 }
 
-// getBalance
-
-
-deposit(account, 25);
-
+// Gets account balance
+function getBalance() {
+    console.log("Your account currently has $" + account.balance + " balance.");
+}
 
