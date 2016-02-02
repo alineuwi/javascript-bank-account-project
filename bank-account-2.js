@@ -3,13 +3,18 @@ var accounts = [];
 // Account Object
 // amount
 // username
-var Account = function Account(username, amount){
-    this.amount = amount,
-    this,username = username
-};
+
 // createAccount(account)
 // push onto accounts array
 // return account
+function createAccount(account, username, amount){
+    var account = {
+        username: username,
+        amount: amount        
+    };
+    accounts.push(account);
+}
+
 
 // getAccount(username);
 // find matching account 
@@ -54,9 +59,5 @@ function getBalance(accountName) {
     console.log("Your account currently has $" + account.balance + " balance.");
 }
 
-deposit(account, 35);
-deposit(account, "Fred");
-withdraw(account, "fred");
-withdraw(account, 21);
-
-getBalance(account);
+createAccount("account1", "Joe Smith", 25);
+console.log(accounts);
