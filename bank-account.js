@@ -18,7 +18,7 @@ function withdraw(accountName, amount) {
 }
 
 // Gets account balance
-function getBalance() {
+function getBalance(accountName) {
     console.log("Your account currently has $" + account.balance + " balance.");
 }
 
