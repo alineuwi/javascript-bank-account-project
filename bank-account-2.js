@@ -23,28 +23,29 @@ function getAccount(username) {
     accounts.forEach(function (element, index) {
         if (element.username === username){
             foundUser = element;
-        } else {
-            foundUser = false;
-        }
+        } 
     });
     return foundUser;
 }
 
 // check amount is a number
 function checkAmount (amount) {
+    var valid;
     if (typeof amount === "number"){
-        return true;
+        valid = true;
     } else {
-        return false;
+        valid = false;
     }
+    return valid;
 }
 // Deposits amount to account
-function deposit(accountName, amount) {
+function deposit(username, amount) {
     var valid = checkAmount(amount);
-    if (valid) {
-        var deposited = AccountName.balance += amount;
+    var foundUser = getAccount(username, accounts);
+    if (valid && foundUser) {
+        var deposited = foundUser.balance + amount;
         console.log("You have deposited $" + amount + ". Your account balance is $" + deposited +".");
-        return 
+        return foundUser.balance += amount;
     } else {
         console.log("Please enter a number to deposit");                   
     }
@@ -77,4 +78,11 @@ function getBalance(username) {
 createAccount("account1", "joesmith", 25);
 getBalance("joesmith");
 withdraw("joesmith", 5);
-getBalance("joesmith");                       
+getBalance("joesmith");
+deposit("joesmith", 45);
+createAccount("account2", "ritamcclaren", 1000)
+getBalance("joesmith");
+getBalance("ritamcclaren");
+withdraw("ritamcclaren", 999);
+getBalance("ritamcclaren");
+withdraw("ritamcclaren", 999);
