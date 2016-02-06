@@ -1,11 +1,5 @@
 var accounts = [];
 
-// Account Object
-// amount
-// username
-
-// createAccount(account)
-// push onto accounts array
 // return account
 function createAccount(accountName, username, amount) {
     var accountName = {
@@ -75,14 +69,5 @@ function getBalance(username) {
         console.log("There is no account matching");
     }    
 }
-createAccount("account1", "joesmith", 25);
-getBalance("joesmith");
-withdraw("joesmith", 5);
-getBalance("joesmith");
-deposit("joesmith", 45);
-createAccount("account2", "ritamcclaren", 1000)
-getBalance("joesmith");
-getBalance("ritamcclaren");
-withdraw("ritamcclaren", 999);
-getBalance("ritamcclaren");
-withdraw("ritamcclaren", 999);
+
+
